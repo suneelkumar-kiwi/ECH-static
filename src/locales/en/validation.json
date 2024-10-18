@@ -1,0 +1,13 @@
+{
+    "PASSWORD_REQUIRED": "Password is required.",
+    "INVALID_PASSWORD": "Password invalid.",
+    "EMAIL_REQUIRED": "Email is required.",
+    "INVALID_EMAIL": "Invalid email.",
+    "EMAIL_ALREADY_EXISTS": "Email already exists.",
+    "EMAIL_ALREADY_VERIFIED": "Email already verified.",
+    "NEXT_REDIRECT": "Redirect to patient dashboard.",
+    "EMAIL_OTP_INVALID": "The OTP is incorrect.",
+    "LAST_NAME_BLANK": "Last name is required.",
+    "EITHER_SPECIALIZATION_OR_ALT_HEALTH_NEEDED": "Please provide a value for either alternative healthcare or specialization.",
+    "INACTIVE_USER": "Account has been deleted."
+}

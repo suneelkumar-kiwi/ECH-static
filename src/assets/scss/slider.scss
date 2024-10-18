@@ -1,0 +1,136 @@
+.slider-card{
+  border-radius: 40px;
+  background: #0A0E25;
+  box-shadow: 0px 0px 34px 7px #2E146A inset;
+  padding: 30px;
+  max-width: 220px;
+  text-align: left;
+  cursor: pointer;
+  .card-image{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    position: relative;
+    .user-image{
+      height: 100%;
+      width: 100%;
+      border-radius: inherit;
+    }
+    .verify-image{
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #FFF;
+      filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.28));
+      backdrop-filter: blur(14px);
+      text-align: center;
+      padding-top: 7px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      img{
+        margin: 0 auto;
+      }
+    }
+  }
+  .card-title{
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-text{
+    margin-bottom: 8px;
+  }
+  .heading-with-btn{
+    margin-bottom: 0;
+    .rating{
+      display: flex;
+      font-weight: 700;
+      img{
+        margin-right: 7px;
+      }
+    }
+  }
+}
+.slick-prev, .slick-next{
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.30);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  z-index: 1;
+  &::before{
+    content: '';
+    height: 24px;
+    width: 24px;
+    background: url('../images/slider-arrow.svg') no-repeat center;
+    display: inline-block;
+  }
+  &:hover,
+  &:focus{
+    background: rgba(255, 255, 255, 0.30);
+  }
+  &.slick-disabled{
+    background: rgba(255, 255, 255, 0.30);
+    pointer-events: none;
+  }
+}
+.slick-prev{
+  left: 10px;
+  @media (min-width: $medium) {
+    left: 8px;
+  }
+  @media (min-width: $large) {
+    left: 32px;
+  }
+}
+.slick-next{
+  right: 10px;
+  @media (min-width: $medium) {
+    right: 8px;
+  }
+  @media (min-width: $large) {
+    right: 32px;
+  }
+  &::before{
+    transform: rotate(180deg);
+  }
+}
+.slick-dots{
+  bottom: -30px;
+  li{
+    width: 6px;
+    height: 6px;
+    padding: 0;
+    margin: 0 2px;
+    @extend %all-animation;
+    button{
+      &::before{
+        background: rgba(255, 255, 255, 0.30);
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        @extend %all-animation;
+      }
+    }
+    &.slick-active{
+      width: 17px;
+      button{
+        &::before{
+          opacity: 1;
+          background: #0C01FB;
+          width: 17px;
+          border-radius: 41px;
+        }
+      }
+    }
+  }
+}

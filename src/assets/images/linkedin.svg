@@ -1,0 +1,21 @@
+<svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="linkedin">
+<path id="Rectangle" d="M37.7048 9.66797H9.31616V35.332H37.7048V9.66797Z" fill="white"/>
+<g id="Fill-209" filter="url(#filter0_i_2686_6813)">
+<path d="M33.75 33.7289H29.0883V26.4333C29.0883 24.6938 29.0573 22.4564 26.6653 22.4564C24.2395 22.4564 23.8697 24.352 23.8697 26.3095V33.7289H19.2122V18.727H23.6812V20.7787H23.7459C24.3675 19.5989 25.8891 18.3544 28.1573 18.3544C32.8781 18.3544 33.75 21.4608 33.75 25.5009V33.7289ZM13.9556 16.6781C12.458 16.6781 11.25 15.4659 11.25 13.9739C11.25 12.4819 12.458 11.2697 13.9556 11.2697C15.4463 11.2697 16.657 12.4819 16.657 13.9739C16.657 15.4659 15.4463 16.6781 13.9556 16.6781ZM16.2872 33.7289H11.6198V18.727H16.2872V33.7289ZM22.5 0C10.073 0 0 10.073 0 22.5C0 34.9256 10.073 45 22.5 45C34.927 45 45 34.9256 45 22.5C45 10.073 34.927 0 22.5 0Z" fill="#0A0E25"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_i_2686_6813" x="0" y="0" width="45" height="45" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feMorphology radius="6.09" operator="erode" in="SourceAlpha" result="effect1_innerShadow_2686_6813"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="14.79"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.180392 0 0 0 0 0.0784314 0 0 0 0 0.415686 0 0 0 1 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_2686_6813"/>
+</filter>
+</defs>
+</svg>
