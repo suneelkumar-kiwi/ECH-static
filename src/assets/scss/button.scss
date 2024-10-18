@@ -1,0 +1,115 @@
+.btn {
+  height: 44px;
+  padding: 13px 26px;
+  cursor: pointer;
+  line-height: 1;
+  display: inline-block;
+  text-align: center;
+  border-radius: 100px;
+  font-weight: 700;
+  box-shadow: none !important;
+  &.step-footer-btn{
+    @media (max-width: 767px) {
+      max-width: 208px;
+    }
+  }
+  &.btn-md{
+    height: 45px;
+    padding-left: 28px;
+    padding-right: 28px;
+    font-size: 14px;
+  }
+  &.disabled,
+  &:disabled {
+    opacity: 1;
+    cursor: default;
+    pointer-events: none;
+  }
+  & + .btn {
+    margin-left: 8px;
+  }
+  &.btn-primary {
+    color: $white;
+    border: 0;
+    border-color: transparent;
+    @extend %all-animation;
+    background: $primary-button-background;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: normal;
+    backdrop-filter: blur(6px);
+    min-width: 90px;
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: transparent;
+      background-color: darken($primary-button-background, 5);
+    }
+
+    &.disabled,
+    &:disabled {
+      background-color: #17109f;
+      opacity: 0.5;
+    }
+
+    &.btn-md{
+      font-size: 14px;
+    }
+  }
+  &.btn-lg{
+    height: 59px;
+    min-width: 208px;
+  }
+  &.btn-outline-primary {
+    color: $primary-button-background;
+    border-color: $primary-button-background;
+    @extend %all-animation;
+    background: $white;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 2px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: $primary-button-background;
+      background-color: darken($primary-button-background, 10);
+      color: #fff;
+    }
+
+    &.disabled,
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+  &.btn-link{
+    font-size: 16px;
+    text-decoration: none;
+  }
+  &.btn-danger {
+    border-color: $danger;
+    background: $danger;
+    @extend %all-animation;
+    backdrop-filter: blur(6px);
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: darken($danger, 20);
+      background: darken($danger, 20);
+    }
+  }
+}
+.absolute-outline-btn{
+  position: absolute;
+  right: 0;
+  bottom: -35px;
+  .btn-outline-light{
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    border-color: rgba(255, 255, 255, 0.5);
+    padding: 9px 15px;
+    height: 35px;
+    text-transform: uppercase;
+  }
+}

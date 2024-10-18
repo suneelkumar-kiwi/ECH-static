@@ -1,0 +1,25 @@
+<svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="instagram">
+<g id="Oval" filter="url(#filter0_i_2686_6819)">
+<path d="M22.5 45C34.9264 45 45 34.9264 45 22.5C45 10.0736 34.9264 0 22.5 0C10.0736 0 0 10.0736 0 22.5C0 34.9264 10.0736 45 22.5 45Z" fill="#0A0E25"/>
+</g>
+<g id="Group">
+<path id="Shape" d="M27.1639 10.3018H17.8449C13.6879 10.3018 10.3115 13.6781 10.3115 17.8351V27.1542C10.3115 31.3112 13.6879 34.6875 17.8449 34.6875H27.1639C31.3209 34.6875 34.6973 31.3112 34.6973 27.1542V17.8351C34.6973 13.6781 31.3209 10.3018 27.1639 10.3018ZM31.9747 27.1639C31.9747 29.8182 29.8182 31.9845 27.1542 31.9845H17.8351C15.1809 31.9845 13.0145 29.8279 13.0145 27.1639V17.8449C13.0145 15.1906 15.1711 13.0243 17.8351 13.0243H27.1542C29.8084 13.0243 31.9747 15.1809 31.9747 17.8449V27.1639Z" fill="white"/>
+<path id="Shape_2" d="M22.5001 16.2646C19.0653 16.2646 16.2646 19.0653 16.2646 22.5001C16.2646 25.935 19.0653 28.7356 22.5001 28.7356C25.935 28.7356 28.7356 25.935 28.7356 22.5001C28.7356 19.0653 25.935 16.2646 22.5001 16.2646ZM22.5001 26.2863C20.4119 26.2863 18.714 24.5884 18.714 22.5001C18.714 20.4119 20.4119 18.714 22.5001 18.714C24.5884 18.714 26.2863 20.4119 26.2863 22.5001C26.2863 24.5884 24.5884 26.2863 22.5001 26.2863Z" fill="white"/>
+<path id="Oval_2" d="M29.2102 16.9479C29.7847 16.8548 30.1749 16.3136 30.0818 15.7391C29.9886 15.1646 29.4474 14.7744 28.873 14.8675C28.2985 14.9606 27.9083 15.5018 28.0014 16.0763C28.0945 16.6508 28.6357 17.041 29.2102 16.9479Z" fill="white"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_i_2686_6819" x="0" y="0" width="45" height="45" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feMorphology radius="6.09" operator="erode" in="SourceAlpha" result="effect1_innerShadow_2686_6819"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="14.79"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.180392 0 0 0 0 0.0784314 0 0 0 0 0.415686 0 0 0 1 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_2686_6819"/>
+</filter>
+</defs>
+</svg>

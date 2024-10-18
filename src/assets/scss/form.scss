@@ -1,0 +1,1518 @@
+.form-group {
+  position: relative;
+  margin-bottom: 25px;
+  // @media (min-width: $medium) {
+  //   margin-bottom: 35px;
+  // }
+  label {
+    display: inline-block;
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+  &.error-field {
+    .form-control {
+      border: 1px solid $text-error !important;
+    }
+  }
+  .validation-error {
+    color: $text-error;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
+    min-height: 15px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    padding-right: 8px;
+  }
+  &.disabled {
+    label {
+      span {
+        opacity: 0.3;
+        pointer-events: none;
+      }
+    }
+    .form-control {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  }
+  &.is-invalid{
+    .modal-btn-control{
+      border-color: $input-border-error-color;
+    }
+  }
+  &.disabled-field{
+    opacity: 0.5;
+  }
+}
+label,
+.form-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: $mobile-label-color;
+  margin-bottom: 8px;
+  line-height: normal;
+  @media (min-width: $large) {
+    color: $input-label-color;
+  }
+  @media only screen and (min-width: $medium) and (max-width: $max-large)  {
+    color: #8289AD;
+  }
+  &:has(.custom-checkbox) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .form-check {
+      margin-top: -6px;
+    }
+  }
+}
+.invalid-feedback {
+  color: $error-color;
+  display: none;
+  align-items: center;
+  justify-content: flex-end;
+  line-height: 1.2;
+  font-size: 14px;
+  font-weight: 600;
+  // position: absolute;
+  left: 0;
+  bottom: -22px;
+  margin: 4px 0 0 0;
+  text-align: right;
+}
+.form-control {
+  background-color: $input-background;
+  border: 1px solid $input-border-color;
+  width: 100%;
+  height: 52px;
+  padding: 12px 20px;
+  border-radius: 49px;
+  color: $input-text;
+  font-size: 16px;
+  font-weight: 500;
+  text-size-adjust: none;
+  line-height: 28px;
+  -webkit-appearance: none;
+  appearance: none;
+  @media (min-width: 767px) {
+    font-size: 14px;
+  }
+  &::-webkit-credentials-auto-fill-button {
+    display: none;
+    opacity: 0;
+    font-size: 0;
+    height: 0;
+    width: 0;
+  }
+  &::-webkit-input-placeholder,
+  &::placeholder {
+    color: $input-placeholder;
+    opacity: 1;
+  }
+  &:focus {
+    color: $input-text;
+    background-color: $input-background;
+    border-color: $input-focus-border-color;
+    outline: 0;
+    box-shadow: none;
+  }
+  .was-validated .form-control:invalid,
+  &.is-invalid {
+    border-width: 1px;
+    border-color: $input-border-error-color;
+    background-image: none;
+    padding-right: inherit;
+    &:focus {
+      border-color: $input-border-error-color;
+      box-shadow: none;
+    }
+    ~.invalid-feedback,
+    ~.invalid-tooltip {
+      display: flex;
+    }
+  }
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #ffffff;
+    box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+  &.disabled,
+  &:disabled {
+    color: #6b6d79;
+    border: 1px solid #e9ecef;
+    background: rgba(233, 236, 239, 0.0);
+    &::-webkit-input-placeholder,
+    &::placeholder {
+      color: #6b6d79;
+      opacity: 1;
+    }
+    &:read-only {
+      opacity: 1;
+    }
+  }
+  &:read-only,
+  &.read-only {
+    opacity: 1;
+    color: #6b6d79;
+    border: 1px solid rgba(233, 236, 239, 0.3);
+    background-color: rgba(233, 236, 239, 0.0) !important;
+    &::-webkit-input-placeholder,
+    &::placeholder {
+      color: #bbb;
+      opacity: 1;
+    }
+    &.is-invalid{
+      border-color: $input-border-error-color;
+      &:focus {
+        border-color: $input-border-error-color;
+        box-shadow: none;
+      }
+    }
+  }
+}
+.is-invalid {
+   .form-control,
+   .custom-react-select .react-custom-select__control{
+    border-width: 1px;
+    border-color: $input-border-error-color;
+    background-image: none;
+    &:focus {
+      border-color: $input-border-error-color;
+      box-shadow: none;
+    }
+   }
+   &:read-only
+  .invalid-feedback,
+  .invalid-tooltip {
+    display: flex;
+  }
+}
+input[type="file"] {
+  &:read-only,
+  &.read-only {
+    opacity: 1;
+    color: #bbb;
+    border: 1px solid #fff;
+    background: #fff !important;
+    padding-left: 20px;
+    &::-webkit-input-placeholder,
+    &::placeholder {
+      color: #bbb;
+      opacity: 1;
+    }
+  }
+}
+.form-select {
+  appearance: none;
+  border: 1px solid $input-border-color;
+  color: $input-text;
+  padding: 0 30px 0 16px;
+  text-size-adjust: none;
+  background-color: $input-background;
+  width: 100%;
+  height: 52px;
+  border-radius: 49px;
+  font-size: 14px;
+  font-weight: 500;
+  // @media (min-width: $large) {
+  //     font-size: 0.875rem;
+  // }
+  &::-webkit-input-placeholder,
+  &::placeholder {
+    color: $input-placeholder;
+    opacity: 1;
+  }
+  &:focus {
+    color: $input-text;
+    background-color: $input-background;
+    border-color: $input-focus-border-color;
+    outline: 0;
+    box-shadow: none;
+  }
+  &.is-invalid {
+    border-color: $input-border-error-color;
+  }
+}
+textarea {
+  &.form-control {
+    height: 110px;
+    resize: none;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-radius: 15px;
+    line-height: 24px;
+    @media (min-width: $medium) {
+      height: auto;
+    }
+    &.large {
+      min-height: 160px;
+    }
+  }
+}
+.form-check {
+  padding: 0;
+  margin: 0;
+}
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  @extend .visuallyhidden;
+}
+input[type="radio"]+label,
+input[type="checkbox"]+label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  color: $checkbox-label-color;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  margin-bottom: 0;
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: " ";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: $checkbox-background;
+    border-radius: 4px;
+    border: 1px solid #e9ecef;
+  }
+}
+input[type="radio"]+label {
+  &:before {
+    border-width: 1px;
+    border-color: #fff;
+    background: transparent;
+    border-radius: 50%;
+  }
+}
+input[type="radio"]:checked+label {
+  &:before {
+    border-color: $white;
+    border-width: 6px;
+  }
+}
+input[type="checkbox"]+label {
+  padding-left: 30px;
+  font-weight: 400;
+  &:before {
+    border: 1px solid #FFF;
+    border-radius: 2px;
+    background: transparent;
+  }
+}
+input[type="checkbox"]:checked+label {
+  &:before {
+    background: #0B00FF url(../images/checkbox-checked.svg) no-repeat center;
+    border: 2px;
+    border-color: #0B00FF;
+  }
+}
+.input-with-icon {
+  position: relative;
+  &.prefix-ic{
+    .form-control, .form-select, .react-custom-select__control{
+      padding-left: 45px;
+    }
+    .react-custom-select__dropdown-indicator{
+      display: none;
+    }
+  }
+  .prefix-icon {
+    position: absolute;
+    top: 44px;
+    left: 20px;
+    z-index: 1;
+  }
+  .suffix-icon {
+    position: absolute;
+    top: 42px;
+    right: 20px;
+    z-index: 1;
+    cursor: pointer;
+  }
+  &.new-password{
+    .suffix-icon {
+      top: auto;
+      bottom: 16px;
+    }
+    .is-invalid{
+      + .suffix-icon {
+        bottom: 36px;
+      }
+    }
+    .invalid{
+      + .is-invalid{
+        + .suffix-icon {
+          bottom: 16px;
+        }
+      }
+    }
+  }
+}
+.input-without-icon {
+  .form-floating {
+    &>label {
+      padding: 0.75rem 19px;
+    }
+    &>.form-control,
+    &.form-control-plaintext,
+    &>.form-select {
+      padding: 1rem 19px;
+    }
+  }
+}
+.tooltip {
+  box-shadow: 0px 6px 50px 0px rgba(0, 0, 0, 0.1);
+  &.show {
+    opacity: 1;
+  }
+  .tooltip-inner {
+    padding: 12px;
+    color: $white;
+    font-size: 12px;
+    line-height: normal;
+    text-align: left;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    background: rgba(0, 0, 0, 0.50);
+    backdrop-filter: blur(50px);
+  }
+  .tooltip-arrow::before{
+    border-top-color: rgba(255, 255, 255, 0.11);
+  }
+}
+.custom-upload {
+  border-radius: 7px;
+  border: 1px dashed rgba(255, 255, 255, 0.20);
+  background: #2A1461;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  .file-text {
+    color: #FFF;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    margin-top: 18px;
+  }
+  input[type="file"] {
+    &:read-only,
+    &.readonly {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      padding: 0;
+      cursor: pointer;
+      z-index: 1;
+    }
+    &::-webkit-file-upload-button {
+      cursor: pointer;
+  }
+  }
+  .upload-help-text {
+    line-height: 125%;
+    opacity: 0.5;
+  }
+  .upload-front{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+  .upload-back{
+    position: absolute;
+    left: 30px;
+    bottom: 24px;
+  }
+}
+.custom-days-checkbox {
+  display: flex;
+  align-items: center;
+  width: 470px;
+  justify-content: space-between;
+  input[type="checkbox"]+label {
+    padding-left: 0;
+    width: 55px;
+    height: 55px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    backdrop-filter: blur(100px);
+    font-weight: 700;
+    letter-spacing: 0.42px;
+    &:before {
+      display: none;
+    }
+  }
+  input[type="checkbox"]:checked+label {
+    border-color: #FFF;
+    color: $primary;
+    background: #FFF;
+
+    &:before {
+      display: none;
+    }
+  }
+  .slots-overlap {
+    input[type="checkbox"]:checked+label {
+      color: #FF6060;
+      border-color: #FF6060;
+    }
+  }
+  .slots-required {
+    input[type="checkbox"]+label {
+      color: #FF6060;
+      border-color: #FF6060;
+    }
+  }
+}
+.select-days-container {
+  .invalid-feedback {
+    margin-top: 8px;
+  }
+}
+.pills-checkbox{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  input[type="radio"] + label {
+    padding-left: 0;
+    width: 160px;
+    height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #0A0E25;
+    box-shadow: 0px 0px 14px 7px rgba(46, 20, 106, 0.90) inset;
+    font-size: 14px;
+    font-weight: 700;
+    &:before {
+      display: none;
+    }
+  }
+  input[type="radio"]:checked + label {
+    border-radius: 8px;
+    border: 1px solid #FFF;
+    background: rgba(255, 255, 255, 0.10);
+    &:before, &::after {
+      display: none;
+    }
+  }
+  .disabled-slot {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+.custom-tabs{
+  .nav{
+    align-items: center;
+    margin-bottom: 20px;
+    @media (min-width: $large) {
+      justify-content: center;
+      margin-bottom: 0;
+    }
+    .nav-item {
+      padding: 0;
+      @media (min-width: $medium) {
+        padding: 30px 22px 20px;
+      }
+    }
+    .nav-link {
+      padding: 10px;
+      color: rgba(255, 255, 255, 0.50);
+      font-size: 16px;
+      font-weight: 400;
+      @media (min-width: $medium) {
+        padding: 5px;
+        font-size: 18px;
+        font-weight: 700;
+      }
+      &:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+      &.active {
+        color: #fff;
+        @media (max-width: 767px) {
+          background: linear-gradient(90deg, #DFA59B 26.21%, #A07FC0 78.02%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+    }
+  }
+  .data-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    @media (min-width: $large) {
+      padding: 10px 7px;
+    }
+    .data-block {
+      flex: 0 0 calc(50% - 7px);
+      max-width: calc(50% - 7px);
+      margin-bottom: 13px;
+      padding: 22px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      background-color: rgba(0, 0, 0, 0.20);
+      backdrop-filter: blur(50px);
+      height: 78px;
+      @media (min-width: $medium) {
+        height: auto;
+      }
+      @media (max-width: 767px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 14px;
+      }
+      &:nth-child(odd) {
+        margin-right: 14px;
+        @media (min-width: $large) {
+          margin-right: 0;
+        }
+      }
+      @media (min-width: $large) {
+        flex: 0 0 25%;
+        max-width: 25%;
+        margin-bottom: 25px;
+        padding: 0 10px;
+        backdrop-filter: none;
+        border: none;
+        background-color: transparent;
+      }
+      span {
+        cursor: pointer;
+        @media (max-width: 767px) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+
+.react-datepicker__tab-loop {
+  z-index: 3;
+  position: relative;
+}
+.input-with-check-lable{
+  position: relative;
+  .custom-checkbox{
+    position: absolute;
+    right: 10px;
+    z-index: 1;
+  }
+}
+// Datepicker UI
+.datepicker-wrapper,
+.month-year-select,
+.custom-year-select{
+  .rmdp-wrapper{
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    background: #050409;
+    box-shadow: none;
+  }
+  .rmdp-header{
+    padding: 10px 0;
+  }
+  .rmdp-header-values {
+    font-family: "Cabin", sans-serif;
+    color: transparent;
+    span{
+      background-color: $primary;
+      color: #fff;
+      font-size: 14px;
+      padding: 6px 20px;
+      border-radius: 20px;
+      border: 1px solid transparent;
+    }
+  }
+  .rmdp-day-picker{
+    > div{
+      width: 100%;
+    }
+    .rmdp-week {
+      &:first-child{
+        border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+        margin-bottom: 5px;
+      }
+    }
+    .rmdp-week-day {
+      font-size: 13px;
+      color: $white;
+    }
+  }
+  .rmdp-day{
+    color: $white;
+    font-family: "Cabin", sans-serif;
+    font-size: 13px;
+
+    &.rmdp-disabled {
+      opacity: 0.5;
+    }
+    span{
+      font-size: 13px;
+      top: 1px;
+      left: 1px;
+      bottom: 1px;
+      right: 1px;
+    }
+    &:not(.rmdp-disabled, .rmdp-day-hidden) span:hover {
+      background-color: $primary;
+    }
+    &.rmdp-selected{
+      span:not(.highligh){
+        background-color: $primary;
+        box-shadow: none;
+        outline: none;
+      }
+    }
+    &.rmdp-today{
+      span{
+        background-color: transparent;
+        outline: 1px solid $white;
+        outline-offset: -1px;
+        &:hover{
+          outline: none;
+        }
+      }
+    }
+  }
+  .rmdp-arrow{
+    border-color: $white;
+    height: 8px;
+    width: 8px;
+  }
+  .rmdp-container {
+    width: 100%;
+    .form-control{
+      background-image: url(../images/calendar-white-icon.svg);
+      background-repeat: no-repeat;
+      background-position: center right 20px;
+      padding-left: 20px;
+      cursor: pointer;
+      &:read-only{
+        color: $white;
+      }
+    }
+  }
+  .rmdp-arrow-container{
+    border: none;
+    &:hover, &:focus{
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+  .rmdp-ep-arrow{
+    border: none !important;
+    top: 1px !important;
+    &:after{
+      box-shadow: none;
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      background: #050409;
+    }
+  }
+  .rmdp-month-picker,
+  .rmdp-year-picker{
+    background: #050409;
+  }
+}
+// Month/Year Select UI
+.month-year-select,
+.custom-year-select{
+  .only.rmdp-month-picker,
+  .only.rmdp-year-picker{
+    height: 180px;
+    padding-top: 15px;
+  }
+  .rmdp-container {
+    width: 100%;
+    .form-control{
+      background-image: none;
+      padding-left: 20px;
+      cursor: pointer;
+    }
+  }
+}
+// Full Calendar UI
+.custom-calendar-container{
+  margin-bottom: 20px;
+  .react-calendar{
+    margin: 0 -14px;
+    position: relative;
+  }
+  .react-calendar__navigation__prev2-button,
+  .react-calendar__navigation__next2-button {
+    display: none;
+  }
+  .react-calendar__navigation__arrow{
+    border: none;
+    font-size: 20px;
+    border-radius: 18px;
+    color: $white;
+    background-color: rgba(255, 255, 255, 0.10);
+    width: 36px;
+    height: 36px;
+    font-family: sans-serif;
+    font-weight: 100;
+  }
+  .react-calendar__navigation{
+    margin: 0 0 25px 5px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .react-calendar__navigation__label{
+    border: none;
+    background-color: transparent;
+    color:$white;
+    font-size: 22px;
+    font-weight: 700;
+    pointer-events: none;
+  }
+  .react-calendar__month-view__weekdays__weekday{
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.472px;
+    padding: 14px 10px;
+    text-align: center;
+  }
+  abbr{
+    text-decoration: none;
+  }
+  .react-calendar__tile{
+    border: none;
+    background-color: transparent;
+    color: $white;
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 50%;
+    transition: all ease-in-out 0.2s;
+    margin: 2px 0;
+    @media (max-width: 1280px) and (min-width: 1025px) {
+      padding: 11px;
+    }
+    @media only screen and (min-width: $medium) and (max-width: $max-large)  {
+      height: 71px;
+    }
+  }
+  .react-calendar__decade-view__years__year,
+  .react-calendar__century-view__decades__decade,
+  .react-calendar__year-view__months__month{
+    border-radius: 25px;
+    padding: 10px;
+  }
+  .react-calendar__month-view__days__day--neighboringMonth{
+    visibility: hidden;
+    opacity: 0;
+    abbr{
+      display: none;
+    }
+  }
+  .react-calendar__tile--now{
+    color: $white;
+    position: relative;
+    &:not(.react-calendar__tile--active)::after{
+      content: "";
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      right: 1px;
+      bottom: 1px;
+      border-radius: 50%;
+      border: 1px solid $white;
+      @media only screen and (min-width: $medium) and (max-width: $max-large)  {
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 45px;
+        height: 45px;
+      }
+    }
+  }
+  .react-calendar__tile--active,
+  .react-calendar__tile--hasActive{
+    background-color: $primary;
+    color: $white;
+    @media only screen and (min-width: $medium) and (max-width: $max-large)  {
+      background-color: unset;
+      color: unset;
+      abbr {
+        background-color: $primary;
+        color: $white;
+        border-radius: 50%;
+        padding: 13px 14px;
+        width: 45px;
+        height: 45px;
+        display: block;
+        margin: auto;
+      }
+    }
+  }
+  .react-calendar__navigation__prev-button{
+    position: absolute;
+    right: 58px;
+    font-size: 0;
+    background: rgba(255, 255, 255, 0.1) url(../images/left-arrow.svg) center no-repeat;
+  }
+  .react-calendar__navigation__next-button{
+    position: absolute;
+    right: 14px;
+    font-size: 0;
+    background: rgba(255, 255, 255, 0.1) url(../images/right-arrow.svg) center no-repeat;
+  }
+  .react-calendar__tile:disabled{
+      opacity: .5 !important;
+  }
+}
+
+.custom-slider{
+  margin: 20px 0 50px 0;
+  .multi-range-slider {
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    .labels{
+      margin-top: 13px;
+      .label{
+        font-size: 12px;
+        font-weight: 400;
+      }
+    }
+    .bar{
+      margin: 0 7px;
+    }
+    .bar-left{
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 8px 0px 0px 8px;
+      box-shadow: none;
+      padding: 1px 0px;
+    }
+    .bar-right{
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 0px 8px 8px 0px;
+      box-shadow: none;
+    }
+    .bar-inner{
+      border: 0;
+      background-color: #fff;
+      box-shadow: none;
+    }
+    .thumb{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &::before{
+        border-color: #fff;
+        height: 15px;
+        width: 15px;
+        box-shadow: none;
+        margin: -7px auto;
+      }
+      .caption{
+        bottom: 30px;
+        display: flex;
+        left: -6px;
+        *{
+          opacity: 0;
+        }
+      }
+
+    }
+    .thumb-right{
+      margin-left: 8px
+    }
+    .thumb-left{
+      display: none;
+    }
+    &.disabled{
+      border: none;
+      box-shadow: none;
+    }
+  }
+  &.currency-dollar{
+    .multi-range-slider {
+      // .labels{
+      //   .label{
+      //     &::before{
+      //       content: '$';
+      //       display: inline-block;
+      //     }
+      //   }
+      // }
+      .thumb{
+        .caption{
+          *{
+            &::before{
+              content: '$';
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+    .thumb{
+      .caption{
+        bottom: 30px;
+        display: flex;
+        left: -6px;
+        *{
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+.custom-react-select {
+  position: relative;
+  &.is-invalid {
+    .react-custom-select__control{
+      border-color: $input-border-error-color;
+      &:focus, &:hover {
+        border-color: $input-border-error-color;
+      }
+    }
+  }
+  .react-custom-select__control{
+    background-color: $input-background;
+    border: 1px solid $input-border-color;
+    width: 100%;
+    height: 52px;
+    padding: 7px 20px;
+    border-radius: 49px;
+    color: $input-text;
+    font-size: 14px;
+    font-weight: 500;
+    text-size-adjust: none;
+    line-height: 28px;
+    box-shadow: none !important;
+    &:hover{
+      border-color: $input-border-color;
+    }
+    &.react-custom-select__control--is-focused{
+      border-color: $white;
+    }
+  }
+  .react-custom-select__menu-list{
+    max-height: 200px;
+  }
+  .react-custom-select__input-container{
+    margin: 0;
+    padding: 0;
+    grid-template-columns: 0 auto;
+  }
+  .react-custom-select__placeholder{
+    font-size: 16px;
+  }
+  .react-custom-select__input,
+  .react-custom-select__single-value{
+    color: $white !important;
+    @media (max-width: 767px) {
+      font-size: 16px !important;
+    }
+  }
+  .react-custom-select__indicator-separator{
+    display: none;
+  }
+  .react-custom-select__indicator{
+    padding: 0;
+    margin-right: -5px;
+  }
+  .react-custom-select__value-container{
+    padding: 0;
+  }
+  .react-custom-select__menu{
+    z-index: 9;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    background: #050409;
+    padding: 12px 0;
+    margin: 1px 0;
+    .react-custom-select__menu-list{
+      .react-custom-select__menu-notice--no-options{
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 16px;
+      }
+      .react-custom-select__option{
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 12px;
+        padding: 0 20px;
+        transition: all ease-in-out 0.2s;
+        cursor: pointer;
+        &:last-child{
+          margin-bottom: 0;
+        }
+        &:hover{
+          color: $white;
+        }
+      }
+      .react-custom-select__option--is-selected{
+        color: $white;
+        background-color: transparent;
+      }
+      .react-custom-select__option--is-focused{
+        color: $white;
+        background-color: transparent;
+      }
+    }
+  }
+  .is-invalid {
+    border-width: 1px;
+    border-color: $input-border-error-color;
+    background-image: none;
+    padding-right: inherit;
+    &:focus {
+      border-color: $input-border-error-color;
+      box-shadow: none;
+    }
+  }
+  &.month-dropdown {
+    max-width: fit-content;
+    position: relative;
+    top: 45px;
+    z-index: 1;
+    .react-custom-select__control {
+      cursor: pointer;
+      border: none;
+    }
+  }
+}
+.PhoneInput{
+  .PhoneInputInput{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: $white;
+  }
+  .PhoneInputCountrySelect{
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    background-color: #333;
+    backdrop-filter: blur(50px);
+    color: $white;
+    padding: 0 10px;
+  }
+}
+.select-with-input{
+  .currency-box{
+    position: relative;
+  }
+  .custom-react-select {
+    position: absolute;
+    top: 25px;
+    left: 16px;
+    z-index: 1;
+    width: 60px;
+    .react-custom-select__control{
+      padding: 0 10px 0 0;
+      border: 0;
+      width: 60px;
+      &::before{
+        content: '';
+        height: 27px;
+        width: 1px;
+        background: #3B3C4D;
+        position: absolute;
+        right: 0;
+        top: 12px;
+      }
+      &:has(:not(.react-custom-select__control--menu-is-open)){
+        z-index: 0;
+      }
+    }
+    .react-custom-select__menu{
+      min-width: 80px;
+    }
+    .react-custom-select__single-value{
+      font-weight: 700;
+    }
+  }
+  .form-control{
+    padding-left: 82px;
+  }
+}
+
+.passowrd-warning {
+  color: #8289AD;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 13.79px;
+  letter-spacing: -0.8%;
+  margin-bottom: 8px;
+  @media (min-width: $large) {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  &.invalid {
+    color: $input-border-error-color;
+  }
+}
+.phone-number-custom-input {
+  .react-tel-input {
+    .form-control {
+      background-color: rgba(0, 0, 0, 0);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      outline: none;
+      color: $white;
+      width: 100%;
+      height: 52px;
+      border-radius: 49px;
+      padding-left: 75px;
+      font-family: "Cabin", sans-serif;
+      @media (max-width: 767px) {
+        font-size: 16px;
+      }
+      &:focus{
+        border-color: $white;
+      }
+    }
+    .is-invalid {
+      border-color: $input-border-error-color;
+    }
+    .flag-dropdown {
+      top: 12px;
+      bottom: 12px;
+      background-color: transparent;
+      border: none;
+      border-right: 1px solid #3B3C4D;
+      border-radius: 49px 0 0 49px;
+      &.open{
+        background-color: transparent;
+      }
+      .selected-flag {
+        width: 64px;
+        padding-left: 22px;
+        &:hover, &:focus, &.open{
+          background-color: transparent;
+        }
+        .arrow{
+          border: none;
+          border-top: 2px solid #fff;
+          border-right: 2px solid #fff;
+          width: 6px;
+          height: 6px;
+          transform: rotate(136deg);
+          margin-top: -4px;
+          left: 26px;
+        }
+      }
+      .country-list {
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.11);
+        background: rgba(0, 0, 0, 0.50);
+        backdrop-filter: blur(50px);
+        color: $white;
+        font-family: "Cabin", sans-serif;
+        .country{
+          padding: 10px 20px;
+          color: rgba(255, 255, 255, 0.50);
+          .dial-code{
+            color: rgba(255, 255, 255, 0.50);
+          }
+          &:hover, &.highlight{
+            background-color: transparent;
+            color: $white;
+            .dial-code{
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+  .invalid-feedback {
+    color: $error-color;
+    display: block;
+    position: absolute;
+  }
+}
+.custom-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  opacity: 0.4;
+}
+.text-capital {
+  text-transform: capitalize;
+}
+.react-custom-select__menu-portal{
+  z-index: 10000 !important;
+  .react-custom-select__menu {
+    z-index: 9;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.11) !important;
+    background: #050409;
+    margin: 1px 0 !important;
+    box-shadow: none !important;
+    .react-custom-select__menu-list{
+      max-height: 200px;
+      .react-custom-select__menu-notice--no-options{
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 16px;
+      }
+      .react-custom-select__option{
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 12px;
+        padding: 0 20px;
+        transition: all ease-in-out 0.2s;
+        cursor: pointer;
+        &:hover{
+          color: $white;
+        }
+      }
+      .react-custom-select__option--is-selected{
+        color: $white;
+        background-color: transparent;
+      }
+      .react-custom-select__option--is-focused{
+        color: $white;
+        background-color: transparent;
+      }
+    }
+  }
+}
+.no-location-text{
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  font-size: 16px;
+  pointer-events: none;
+  cursor: default !important;
+}
+
+// datepicker css
+.time-input {
+  .react-datepicker{
+    font-family: "Cabin", sans-serif;
+  }
+  .react-datepicker-wrapper{
+    .form-control{
+      background-image: url(../images/clock.svg);
+    }
+  }
+  .react-datepicker--time-only{
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    background: #050409;
+  }
+  .react-datepicker__header{
+    background-color: transparent;
+    border: none;
+    color: $white;
+    font-family: "Cabin", sans-serif;
+    font-size: 16px;
+    .react-datepicker-time__header{
+      color: $white;
+    }
+  }
+  svg.react-datepicker__triangle{
+    fill: rgba(0, 0, 0, 0.8) !important;
+    color: #050409 !important;
+    stroke: rgba(255, 255, 255, 0.11);
+  }
+  .react-datepicker__time-container{
+    .react-datepicker__time{
+      background: rgba(0, 0, 0, 0.50);
+      color: $white;
+      border-bottom-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+      li{
+        font-size: 14px;
+        font-weight: 400;
+        &.react-datepicker__time-list-item--disabled{
+          opacity: 0.5;
+        }
+        &:not(.react-datepicker__time-list-item--disabled):hover{
+          background: lighten(#0B00FF, 10) !important;
+        }
+        &.react-datepicker__time-list-item--selected{
+          background: #0B00FF !important;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  .rmdp-container {
+    width: 100%;
+    .rmdp-ep-arrow{
+      border: none;
+      top: 1px !important;
+      &:after{
+        box-shadow: none;
+        border: 1px solid rgba(255, 255, 255, 0.11);
+        background: #050409;
+      }
+    }
+    .rmdp-wrapper{
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      background: #050409;
+      box-shadow: none;
+    }
+  }
+  .rmdp-time-picker {
+    input{
+      background-color: transparent;
+      color: $white;
+      width: 50px;
+      font-size: 15px;
+      outline: none;
+      border:1px solid transparent;
+      border-color: rgba(255, 255, 255, 0.11);
+      border-radius: 4px;
+    }
+    .rmdp-am{
+      color: $white;
+      font-size: 15px;
+    }
+    .rmdp-arrow{
+      border-color: rgba(255, 255, 255, 0.5);
+      &:hover{
+        border-color: $white;
+      }
+    }
+  }
+  .rmdp-arrow-container{
+    border: none;
+    &:hover, &:focus{
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+  .rmdp-input{
+    background-color: $input-background;
+    border: 1px solid $input-border-color;
+    width: 100%;
+    height: 52px;
+    padding: 12px 20px;
+    border-radius: 49px;
+    color: $input-text;
+    font-size: 14px;
+    font-weight: 500;
+    text-size-adjust: none;
+    line-height: 28px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url(../images/clock.svg);
+    background-position: center right 20px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    &:focus{
+      color: $input-text;
+      background-color: $input-background;
+      border-color: $input-focus-border-color;
+      outline: 0;
+      box-shadow: none;
+    }
+  }
+  &.is-invalid{
+    .rmdp-input{
+      border-width: 1px;
+      border-color: $input-border-error-color;
+    }
+  }
+}
+
+.disabled-time {
+  pointer-events: none;
+}
+
+.location-select{
+  .react-custom-select__option{
+    &:not(:last-child){
+      .custom-options {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 12px;
+      }
+    }
+    &:last-child{
+      margin-bottom: 0 !important;
+    }
+    .custom-options {
+      .title {
+        font-size: 16px;
+        font-weight: 700;
+      }
+      .sub-title {
+        font-size: 12px;
+        font-weight: 400;
+      }
+    }
+  }
+}
+.signup-form {
+  .modal-body {
+    .auth-form {
+      @media (min-width: $medium) {
+        max-width: 550px;
+        width: 100%;
+        margin: 0 auto 15px;
+      }
+    }
+    .custom-profile-select {
+      @media (min-width: $medium) {
+        max-width: 550px;
+        width: 100%;
+        margin: 0 auto 15px;
+      }
+    }
+  }
+}
+.forgot-form {
+  .auth-form {
+    @media (min-width: $medium) {
+      max-width: 550px;
+      width: 100%;
+      margin: 0 auto 15px;
+      padding: 0.25rem 40px 1rem;
+    }
+  }
+}
+
+.patient-deatil-pg {
+  .navbar-nav.main-nav {
+    @media (max-width: $large) {
+      display: none;
+    }
+  }
+  .back-btn {
+    @media only screen and (min-width: $medium) and (max-width: $max-large)  {
+      z-index: 99;
+    }
+  }
+}
