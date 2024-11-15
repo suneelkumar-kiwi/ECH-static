@@ -2,17 +2,27 @@ import i18next from 'i18next';
 import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
 
-const LANGUAGE_OPTIONS = [
+const englishOptions = [
   { value: 'en', label: 'English' },
-  // { value: 'ar', label: 'Arabic' },
   { value: 'es', label: 'Spanish' }
+];
+
+const spanishOptions = [
+  { value: 'en', label: 'English' },
+  { value: 'es', label: 'Español' }
 ];
 
 const LanguageSelector = () => {
   const [lang, setLang] = useState(() => sessionStorage.getItem('language') ?? 'en');
+  const [languageOptions, setLanguageOptions] = useState(englishOptions);
 
   const onLanguageChange = (selectedOption: { value: string; label: string }) => {
     setLang(selectedOption.value);
+    if (selectedOption.value === 'es') {
+      setLanguageOptions(spanishOptions);
+    } else {
+      setLanguageOptions(englishOptions);
+    }
     if (selectedOption.value === 'ar') {
       document.body.classList.add('lang-ar');
     } else {
@@ -36,16 +46,16 @@ const LanguageSelector = () => {
   return (
     <div className="language-select">
       <Select
-        options={LANGUAGE_OPTIONS}
+        options={languageOptions}
         onChange={(selectedOption:any) => onLanguageChange(selectedOption)}
-        value={LANGUAGE_OPTIONS.find((option: { value: string; label: string }) => option.value === lang)}
+        value={languageOptions.find((option: { value: string; label: string }) => option.value === lang)}
         className="custom-react-select"
         classNamePrefix="react-custom-select"
         menuPlacement="auto"
         isSearchable={false}
       />
       <ul className="choose-language-mobile d-none">
-        {LANGUAGE_OPTIONS.map((item) => (
+        {languageOptions.map((item) => (
           <li className={`${lang === item.value ? 'active' : ''}`} onClick={() => onLanguageChange(item)} key={item.value}>{item.label}</li>
         ))}
       </ul>

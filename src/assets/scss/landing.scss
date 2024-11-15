@@ -147,6 +147,14 @@
   @media (min-width: $extra-large) {
     padding-bottom: 70px;
   }
+  &.section-with-image-new {
+    @media (max-width: $medium) {
+      display: unset;
+      .image-container {
+        text-align: center;
+      }
+    }
+  }
   .image-container {
     &.order-mob1{
       @media (max-width: 767px) {

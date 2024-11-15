@@ -18,7 +18,7 @@ useEffect(() => {
 }, [type]);
 
   return (
-    <div className="section-with-image" id="our-story">
+    <div className="section-with-image section-with-image-new" id="our-story">
       <div className="image-container">
         <Image
           src={landingStory}
