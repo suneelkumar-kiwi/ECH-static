@@ -1113,7 +1113,7 @@
     width: 280px;
     top: 0;
     bottom: 0;
-    left: 0;
+    right: 0;
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(42px);
     padding: 40px 20px 20px;
@@ -1125,7 +1125,7 @@
     }
     a{
       @media (max-width: 991px) {
-        margin-bottom: 18px;
+        margin-bottom: 25px;
       }
     }
   }
@@ -1164,6 +1164,7 @@
       margin: 6px 0;
     }
     &.cross{
+      z-index: 111;
       &::after{
         transform: rotate(-45deg);
         margin-top: -16px;

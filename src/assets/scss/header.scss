@@ -150,10 +150,11 @@ header{
       }
       .nav-link{
         color: #fff;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 400;
         cursor: pointer;
         padding: 0;
+        text-align: center;
         @media (min-width: $large){
           font-size: 14px;
           padding-left: 10px;
@@ -556,13 +557,7 @@ header{
       }
     }
     .navbar-expand .navbar-nav .nav-link {
-      @media (min-width: $large) {
-        font-size: 12px;
-        padding-left: 10px;
-        padding-right: 10px;
-      }
       @media (min-width: $extra-large) {
-        font-size: 14px;
         padding-left: 18px;
         padding-right: 18px;
       }
