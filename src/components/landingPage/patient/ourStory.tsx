@@ -32,11 +32,13 @@ useEffect(() => {
         <h2 className="section-title">
           {t('OUR')} <span>{t('STORY')}</span>
         </h2>
-        <p className="large-text">
-          {t('OUR_STORY_PARA_ONE')}
-        </p>
-        <p className="large-text">
-          {t('OUR_STORY_PARA_TWO')}
+        <p className="medium-text">
+          {t('OUR_STORY_PARA_ONE')}<br></br>
+          {t('OUR_STORY_PARA_TWO')}<br></br>
+          {t('OUR_STORY_PARA_THREE')}<br></br>
+          {t('OUR_STORY_PARA_FOUR')}<br></br>
+          {t('OUR_STORY_PARA_FIVE')}<br></br>
+          {t('OUR_STORY_PARA_SIX')}
         </p>
       </div>
     </div>

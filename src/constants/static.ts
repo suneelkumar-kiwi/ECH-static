@@ -182,13 +182,13 @@ export const teamMembers: any = [
     description: 'DESCRIPTION_3',
     longDescription: 'LONGDESCRIPTION_3',
   },
-  {
-    image: forzley,
-    name: 'Luke Forzley',
-    role: 'Chief Technology Officer (USA) & Web3 Specialist',
-    description: 'DESCRIPTION_4',
-    longDescription: 'LONGDESCRIPTION_4',
-  },
+  // {
+  //   image: forzley,
+  //   name: 'Luke Forzley',
+  //   role: 'Chief Technology Officer (USA) & Web3 Specialist',
+  //   description: 'DESCRIPTION_4',
+  //   longDescription: 'LONGDESCRIPTION_4',
+  // },
   {
     image: jameson,
     name: 'Flynn Jameson',
@@ -223,7 +223,7 @@ export const doctorsList: any = [
   {
     id: 1,
     image: drCloe,
-    name: 'Dr. Jorge',
+    name: 'Dr. Rhian Smith',
     degination: 'Critical Medicine',
     experience: ' 4 Years',
     star: 4.9,

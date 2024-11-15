@@ -61,6 +61,7 @@ import partner2 from '../assets/images/partner-2.png';
 import partner3 from '../assets/images/partner-3.png';
 import partner4 from '../assets/images/partner-4.png';
 import partner5 from '../assets/images/partner-5.svg';
+import partner6 from '../assets/images/partner-6.svg';
 import logo from '../assets/images/logo.png';
 import facebook from '../assets/images/facebook.svg';
 import linkedin from '../assets/images/linkedin.svg';
@@ -140,7 +141,7 @@ export {
   landingStory, landingHCP, landingSession, dataSecurity,
   dataPie, security, folder, jorge, metz, orozco,
   maciulis, forzley, jameson, partner1, partner2,
-  partner3, partner4, partner5, logo, gotoTop,
+  partner3, partner4, partner5, partner6, logo, gotoTop,
   facebook, linkedin, instagram, twitter, drCloe,
   drJoe, drGuy, drJenny, drBilly, landingHcpAvail,
   landingHcpOnline, landingHcpRecord,

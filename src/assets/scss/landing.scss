@@ -166,8 +166,11 @@
     .brain-image{
       max-width: 260px;
       height: auto;
+      position: sticky;
+      top: 110px;
       @media (min-width: $large) {
         max-width: 350px;
+        top: 130px;
       }
       @media (min-width: $extra-large) {
         max-width: 444px;
@@ -304,6 +307,14 @@
       margin-bottom: 16px;
       @media (min-width: $large) {
         margin-bottom: 20px;
+      }
+    }
+    &.medium-text{
+      font-size: 18px;
+      line-height: 30px;
+      @media (min-width: $large) {
+        font-size: 22px;
+        line-height: 33px;
       }
     }
     &.large-text{

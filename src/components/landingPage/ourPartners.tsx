@@ -1,4 +1,4 @@
-import { partner1, partner2, partner3, partner4, partner5 } from '../../utils/icons';
+import { partner1, partner2, partner3, partner4, partner5, partner6 } from '../../utils/icons';
 import React, { useEffect } from 'react';
 import { Container, Image } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
@@ -77,6 +77,9 @@ useEffect(() => {
           </div>
           <div className="image-container">
             <Image src={partner5} height={30} alt="Partner" />
+          </div>
+          <div className="image-container">
+            <Image src={partner6} height={30} alt="Partner" />
           </div>
         </Slider>
       </Container>
