@@ -1,15 +1,19 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 import { scrollToBottomOfSection } from '../../helpers/helper';
-import { landingStory } from '../../../utils/icons';
+import { forwardArrow, landingStory } from '../../../utils/icons';
 import { Image } from 'react-bootstrap';
+import OurStoryModal from '../../ourStoryModal';
+import { BOOLEAN } from '../../../constants/static';
 
 export default function OurStory() {
   const [searchParams] = useSearchParams();
   const type = searchParams.get('type');
   const { t } = useTranslation();
+  const [ourStoryView, setOurStoryView] = useState(BOOLEAN.FALSE);
+  const onOurStoryView = (status: boolean) => setOurStoryView(status);
 
 useEffect(() => {
   if (type) {
@@ -33,14 +37,15 @@ useEffect(() => {
           {t('OUR')} <span>{t('STORY')}</span>
         </h2>
         <p className="medium-text">
-          {t('OUR_STORY_PARA_ONE')}<br></br>
-          {t('OUR_STORY_PARA_TWO')}<br></br>
-          {t('OUR_STORY_PARA_THREE')}<br></br>
-          {t('OUR_STORY_PARA_FOUR')}<br></br>
-          {t('OUR_STORY_PARA_FIVE')}<br></br>
-          {t('OUR_STORY_PARA_SIX')}
+          <span> {t('OUR_STORY_PARA_ONE')} </span>
         </p>
+        <div className="btn-space mt-0">
+          <button onClick={() => onOurStoryView(BOOLEAN.TRUE)} type="button" className="btn btn-primary btn-lg"> {t('READ_MORE')} <Image src={forwardArrow} width={20} height={20} alt="Arrow" /> </button>
+        </div>
       </div>
+      <OurStoryModal onShow={onOurStoryView}
+        show={ourStoryView}
+        t={t} />
     </div>
   );
 }

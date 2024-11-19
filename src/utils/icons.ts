@@ -127,6 +127,8 @@ import cameraIcon from '../assets/images/camera-icon.svg';
 import chatIcon from '../assets/images/chat-icon.svg';
 import fromIcon from '../assets/images/from-icon.svg';
 import callIcon from '../assets/images/call-icon.svg';
+import roadMap from '../assets/images/roadmap-icon.svg'; 
+import backBtn from '../assets/images/back-btn.svg';
 
 export {
   homeIcon, calendarIcon, folderIcon, userIcon,
@@ -154,5 +156,5 @@ export {
   informationIcon, clearIcon, locationIcon, availabilityIcon, feerangeIcon, healthcareIcon,
   genderIcon, ratingIcon, searchCross, editCircleIcon, dummyUser2, dummyUser3, clockIcon,
   crossIc, closeWhiteIcon, coloredCheck, kadoLogo, kycDocInfo, logoSmall2, v3Dots,
-  micIcon, cameraIcon, chatIcon, fromIcon, callIcon
+  micIcon, cameraIcon, chatIcon, fromIcon, callIcon, roadMap, backBtn
 };

@@ -7,7 +7,7 @@ function AboutUsModal(props: any) {
 
   return (
     <ModalWrapper
-      modalClassName="extra-large-modal terms-service"
+      modalClassName="extra-large-modal"
       show={show}
       onClose={onShow}
       title={t('ABOUT_US')}

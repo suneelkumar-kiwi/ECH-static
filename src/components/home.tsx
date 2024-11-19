@@ -11,11 +11,13 @@ import BenefitsOfPlatform from './landingPage/benefitsOfPlatform';
 import HcpSectionOne from './landingPage/hcp/hcpSectionOne';
 import HcpMiddleSection from './landingPage/hcp/hcpMiddleSection';
 import AuthHeader from './cutomHeader';
+import Roadmap from './roadmap';
 
 const Home: React.FC = () => {
 
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<string>('patient');
+  const [roadmapVisible, setRoadmapVisible] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -30,54 +32,68 @@ const Home: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+
+  // ShowRoadmap method
+  const showRoadmap = () => {
+    setRoadmapVisible((prev) => !prev);
+    if (!roadmapVisible) {
+      document.body.classList.add('popup-open');
+    } else {
+      document.body.classList.remove('popup-open');
+    }
+  };
+
   return (
-    <div className="home-page">
-      <AuthHeader setActiveTab={setActiveTab} />
-      <div>
-        <div className="animation-trigger" id="hasAnimation" />
-        <div className="animation-bg fixed" />
-        <div className="landing-container">
-          <Container>
-            <Tab.Container
-              activeKey={activeTab}
-              onSelect={(k: string | null) => setActiveTab(k ?? 'patient')}
-            >
-              <Row className="custom-tabs">
-                <Col sm={12}>
-                  <Nav variant="pills">
-                    <Nav.Item>
-                      <Nav.Link eventKey="patient">{t('PATIENTS')}</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="hcp">
-                        {t('HEALTHCARE_PROVIDERS')}
-                      </Nav.Link>
-                    </Nav.Item>
-                  </Nav>
-                </Col>
-                <Col sm={12}>
-                  <Tab.Content>
-                    <Tab.Pane eventKey="patient">
-                      <SectionOne />
-                      <OurStory />
-                      <MiddleSection />
-                      <BenefitsOfPlatform />
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="hcp">
-                      <HcpSectionOne />
-                      <HcpMiddleSection />
-                      <BenefitsOfPlatform />
-                    </Tab.Pane>
-                  </Tab.Content>
-                </Col>
-              </Row>
-            </Tab.Container>
-          </Container>
+    <div>
+      {!roadmapVisible && <div className="home-page">
+        <AuthHeader setActiveTab={setActiveTab} />
+        <div>
+          <div className="animation-trigger" id="hasAnimation" />
+          <div className="animation-bg fixed" />
+          <div className="landing-container">
+            <Container>
+              <Tab.Container
+                activeKey={activeTab}
+                onSelect={(k: string | null) => setActiveTab(k ?? 'patient')}
+              >
+                <Row className="custom-tabs">
+                  <Col sm={12}>
+                    <Nav variant="pills">
+                      <Nav.Item>
+                        <Nav.Link eventKey="patient">{t('PATIENTS')}</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="hcp">
+                          {t('HEALTHCARE_PROVIDERS')}
+                        </Nav.Link>
+                      </Nav.Item>
+                    </Nav>
+                  </Col>
+                  <Col sm={12}>
+                    <Tab.Content>
+                      <Tab.Pane eventKey="patient">
+                        <SectionOne setRoadmap={showRoadmap} />
+                        <OurStory />
+                        <MiddleSection />
+                        <BenefitsOfPlatform />
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="hcp">
+                        <HcpSectionOne setRoadmap={showRoadmap} />
+                        <HcpMiddleSection />
+                        <BenefitsOfPlatform />
+                      </Tab.Pane>
+                    </Tab.Content>
+                  </Col>
+                </Row>
+              </Tab.Container>
+            </Container>
+          </div>
         </div>
-      </div>
-      {activeTab === 'patient' && <Testimonials />}
-      <OurPartners />
-      <Footer />
+        {activeTab === 'patient' && <Testimonials />}
+        <OurPartners />
+        <Footer />
+      </div> }
+      {roadmapVisible && <Roadmap closeRoadmapModal={showRoadmap} />}
     </div>
   );
 };

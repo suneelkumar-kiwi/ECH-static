@@ -174,11 +174,8 @@
     .brain-image{
       max-width: 260px;
       height: auto;
-      position: sticky;
-      top: 110px;
       @media (min-width: $large) {
         max-width: 350px;
-        top: 130px;
       }
       @media (min-width: $extra-large) {
         max-width: 444px;
@@ -323,6 +320,10 @@
       @media (min-width: $large) {
         font-size: 22px;
         line-height: 33px;
+      }
+      span{
+        display: block;
+        margin-bottom: 15px;
       }
     }
     &.large-text{

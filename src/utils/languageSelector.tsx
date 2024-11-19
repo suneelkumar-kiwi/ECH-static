@@ -4,7 +4,7 @@ import Select from 'react-select';
 
 const englishOptions = [
   { value: 'en', label: 'English' },
-  { value: 'es', label: 'Spanish' }
+  { value: 'es', label: 'Español' }
 ];
 
 const spanishOptions = [
